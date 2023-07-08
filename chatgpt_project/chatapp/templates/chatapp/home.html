@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ChatGPT - JSON Analysis</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f2f2f2;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        form {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        input[type=text],
+        textarea {
+            width: 400px;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type=submit] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type=submit]:hover {
+            background-color: #45a049;
+        }
+
+        .answer {
+            margin-top: 20px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            background-color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <h1>ChatGPT - JSON Analysis</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="id_json_data">JSON Data:</label><br>
+        <textarea name="json_data" id="id_json_data" rows="5" cols="50"></textarea><br><br>
+        <label for="id_question">Question:</label><br>
+        <input type="text" name="question" id="id_question"><br><br>
+        <input type="submit" value="Ask">
+    </form>
+    {% if answer %}
+    <div class="answer">
+        <p>{{ answer }}</p>
+    </div>
+    {% endif %}
+</body>
+</html>
