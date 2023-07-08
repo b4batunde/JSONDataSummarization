@@ -22,7 +22,7 @@ def home(request):
     return render(request, 'chatapp/home.html', {'form': form})
 
 def chatgpt_answer(json_data, question):
-    openai.api_key = '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'
+    openai.api_key = 'Your API Key'
 
     # Prepare the input for ChatGPT
     input_text = f"JSON Data: {json_data}\nQuestion: {question}"
